@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+<body>
+<style>
+.search_input, .search_input:focus{
+   border:none;
+  border-bottom: 2px solid #333;
+
+}
+
+.py-24 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+	</style>
+
+{% include "partials/header.html" %}
+{% block content %}
+{% endblock %}
+{%include "partials/footer.html" %}
+
+
+</body>
+</html>
