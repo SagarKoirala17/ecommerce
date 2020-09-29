@@ -7,7 +7,7 @@ from django.core.paginator import EmptyPage,PageNotAnInteger,Paginator
 
 def index(request):
     product=Product.objects.order_by('-upload_date')
-    paginator = Paginator(product, 4)
+    paginator = Paginator(product, 8)
     page = request.GET.get('page')
     paged_products = paginator.get_page(page)
     context = {
