@@ -29,4 +29,25 @@ def design(request, product_id):
         'product':product,
     }
     return render(request, 'design/design.html', context)
+# def create_design(request,product_id):
+#     product=Product.objects.all()
+#     design=Design.objects.all()
+#     if product_id:
+#         if request.method="POST":
 
+
+
+def search(request):
+    queryset_list=Product.objects.order_by('-upload_date')
+    if 'products' in request.GET:
+        products=request.GET['products']
+        if products:
+            queryset_list=queryset_list.filter(name__icontains=products)
+
+
+    context={
+        'product': queryset_list,
+        'values': request.GET
+
+    }
+    return render(request,'product/search.html',context)
