@@ -10,7 +10,7 @@ def contact(request):
         message=request.POST['message']
         email=request.POST['email']
 
-        # Check if enquiry is made
+
         if request.user.is_authenticated:
 
            contact = Contact(first_name=first_name, last_name=last_name, message=message, email=email,)

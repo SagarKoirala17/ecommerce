@@ -1,7 +1,10 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from design.models import Design
 from .models import Product
+from django.contrib.auth.models import User
+from django.contrib import messages
 from django.core.paginator import EmptyPage,PageNotAnInteger,Paginator
+
 
 # Create your views here.
 
@@ -29,12 +32,44 @@ def design(request, product_id):
         'product':product,
     }
     return render(request, 'design/design.html', context)
-# def create_design(request,product_id):
-#     product=Product.objects.all()
-#     design=Design.objects.all()
-#     if product_id:
-#         if request.method="POST":
 
+
+def create_design(request):
+        products=Product.objects.all()
+        if request.method == "POST":
+              name = request.POST['name']
+              description = request.POST['description']
+              price = request.POST['price']
+              product=request.POST['products']
+              image=request.POST['image']
+              is_published=request.POST['is_published']
+              date=request.POST['date']
+              if request.user.is_authenticated:
+                  create_design=Design(name=name, price=price, products=products, image=image, is_published=is_published, date=date,description=description)
+                  if create_design.is_published==True:
+                    create_design.save()
+                    messages.success(request, "Your design  has been submitted to the concerned one")
+                    return redirect('product')
+                  else:
+                   messages.error(request,"You must enable is_published to publish the design first")
+                   return redirect('create_design')
+              else:
+                messages.error(request,"You must login first to upload your design")
+                return redirect('login')
+
+        else:
+
+
+           return render(request,"design/create_design.html")
+
+
+def create(request,product_id):
+    product = get_object_or_404(Product, id=product_id)
+    context = {
+        'product': product
+    }
+
+    return render(request, 'design/create_design.html', context)
 
 
 def search(request):

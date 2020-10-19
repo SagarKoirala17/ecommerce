@@ -12,8 +12,13 @@ class Design(models.Model):
     price=models.IntegerField()
     is_published=models.BooleanField(default=True)
     date=models.DateTimeField(default=datetime.now)
+    products=models.CharField(max_length=100,blank=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = "Design"
+
 
 
