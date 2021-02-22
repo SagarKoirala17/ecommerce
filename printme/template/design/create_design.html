@@ -8,12 +8,12 @@
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
             </div>
             
-            <form action="{% url 'create_design'  %}" method="POST">
+            <form action="{% url 'create_design'   %}" method="POST">
 
 
                 {% csrf_token %}
                 {% if user.is_authenticated %}
-                <input type="hidden" name="id" value="{{ product.id }}">
+
                 <div class="lg:w-1/2 md:w-2/3 mx-auto">
                 <div class="flex flex-wrap -m-2">
                     <div class="p-2 w-1/2">
@@ -26,9 +26,19 @@
                         <label class="required" for="id_photo_main">Photo main:</label>
                         <input type="file" name="image" accept="image/*" required id="id_photo_main">
                     </div>
-                     <div class="p-2 w-1/2">
-                        <input class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2" placeholder="Product" name="products" value="{{ product.name }}" type="text">
-                    </div>
+
+                        <label class="required" for="id_product">Product:</label>
+
+                            <div class="related-widget-wrapper">
+                               <select name="product" required id="id_product">
+                                   <option value="" >-------</option>
+                                  <option value="1"  >{{ product.name }}</option>
+
+                               </select>
+                            </div>
+                    <br/>
+                    <br/>
+
                      <div class="form-row field-is_published">
 
 

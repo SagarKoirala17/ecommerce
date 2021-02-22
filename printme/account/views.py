@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-
-
+from order.models import Order
+from product.models import Product
 
 # Create your views here.
 def register(request):
@@ -67,3 +67,12 @@ def logout(request):
       auth.logout(request)
       messages.success(request,"You are logged out")
       return redirect('index')
+
+def my_profile(request):
+    my_user_profile=Product.objects.filter(user=request.user).first()
+    my_orders=Order.objects.filter(is_ordered=True,owner=my_user_profile)
+    context={
+        'my_orders':my_orders
+    }
+    return render(request,'account/profile.html',context)
+r
