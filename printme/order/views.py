@@ -1,9 +1,7 @@
 import datetime
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 from django.shortcuts import render,redirect,get_object_or_404
-
 from .extras import generate_order_id
 from account.models import Profile
 from .models import Order,OrderItem
@@ -29,7 +27,7 @@ def add_to_cart(request,**kwargs):
     user_order, status=Order.objects.get_or_create(owner=user_profile, is_ordered=True)
     user_order.items.add(order_item)
     if status:
-        user_order.ref_code=generate_order_id()
+        user_order.ref_code=generate_order_id
         user_order.save()
 
     messages.success(request,"Items sucessfully added on cart")
@@ -77,7 +75,7 @@ def update_transaction_records(request,order_id):
     #add order to the user profile
     user_profile=get_object_or_404(Profile,user=request.user)
     order_product=[item.product for item in order_items]
-    user_profile.design.add(*order_product)
+    user_profile.product.add(*order_product)
     messages.success(request,"Your items have been added to your list")
     return redirect(reverse('product'))
 

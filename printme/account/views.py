@@ -75,4 +75,3 @@ def my_profile(request):
         'my_orders':my_orders
     }
     return render(request,'account/profile.html',context)
-r

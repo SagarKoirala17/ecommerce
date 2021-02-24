@@ -19,23 +19,19 @@
                 <tbody>
 
 
-                      <tbody>
-                    <tr>
-                        <td class="px-4 py-3">Start</td>
-                        <td class="px-4 py-3">5 Mb/s</td>
-                        <td class="px-4 py-3">15 GB</td>
-                        <td class="px-4 py-3 text-lg text-gray-900">Free</td>
-                        <td class="w-10 text-center">
-                            <input name="plan" type="radio">
-                        </td>
-                    </tr>
+                      <tr>
+            {% for item in order.get_cart_items %}
+            <td class="px-4 py-3">{{ forloop.counter }}</td>
+            <td class="px-4 py-3">{{ item.product.name }}</td>
+            <td class="px-4 py-3">{{ item.product.price }}</td>
+            <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-teal-500 border-0 py-2 px-4 focus:outline-none hover:bg-teal-600 rounded"><a href="{% url 'order:delete_from_cart' item.id %}" >Delete from Cart</a></button>
+            {% endfor %}
+            </tr></tbody>
 
-
-        </tbody>
       </table>
     </div>
     <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
-      <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+      <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy Now</button>
     </div>
   </div>
 </section>

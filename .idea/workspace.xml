@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710167e6-3fd7-4132-ae8f-013338dd64e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/printme/order/extras.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/printme/order/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/printme/template/order/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/account/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/account/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/contact/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/contact/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/printme/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/design/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/design/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/design/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/design/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/order/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/pages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/pages/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/printme/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/printme/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/printme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/printme/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/product/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/product/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/printme/product/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/template/design/create_design.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/design/create_design.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printme/template/design/design.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/design/design.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/template/order/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/order/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/template/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/template/partials/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/partials/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/printme/template/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/product/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printme/template/product/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/printme/template/product/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -82,14 +76,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1613958182823">
+    <state x="336" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1614172495416">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1613958182823" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1613482480170">
+    <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1614172495416" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1614043334853">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1613482480170" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1614043334853" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
