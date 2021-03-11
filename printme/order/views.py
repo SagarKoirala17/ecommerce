@@ -20,9 +20,6 @@ def get_user_pending_order(request):
 def add_to_cart(request,**kwargs):
     user_profile = get_object_or_404(Profile, user=request.user)
     product = Product.objects.filter(id=kwargs.get('item_id', '')).first()
-    if product in request.user.profile.product.all():
-        messages.success(request,"You already own this product")
-        return redirect(('product'))
     order_item, status = OrderItem.objects.get_or_create(product=product)
     user_order, status = Order.objects.get_or_create(owner=user_profile, is_ordered=True)
     user_order.items.add(order_item)
