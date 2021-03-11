@@ -1,9 +1,8 @@
-from django.shortcuts import render,get_object_or_404,redirect
-from .models import Product
+from django.shortcuts import render, get_object_or_404, redirect
 from order.models import Order
-from django.contrib.auth.models import User
-from django.contrib import messages
-from account.models import Profile
+
+from .models import Product
+
 
 # Create your views here.
 

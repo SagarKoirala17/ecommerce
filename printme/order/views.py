@@ -19,22 +19,20 @@ def get_user_pending_order(request):
 @login_required()
 def add_to_cart(request,**kwargs):
     user_profile = get_object_or_404(Profile, user=request.user)
-    product=Product.objects.filter(id=kwargs.get('item_id','')).first()
+    product = Product.objects.filter(id=kwargs.get('item_id', '')).first()
     if product in request.user.profile.product.all():
-        messages.error(request,'You already own this product')
-        return redirect(reverse('product'))
-    order_item, status=OrderItem.objects.get_or_create(product=product)
-    user_order, status=Order.objects.get_or_create(owner=user_profile, is_ordered=True)
+        messages.success(request,"You already own this product")
+        return redirect(('product'))
+    order_item, status = OrderItem.objects.get_or_create(product=product)
+    user_order, status = Order.objects.get_or_create(owner=user_profile, is_ordered=True)
     user_order.items.add(order_item)
     if status:
-        user_order.ref_code=generate_order_id
         user_order.save()
-
-    messages.success(request,"Items sucessfully added on cart")
+    messages.success(request, "Items sucessfully added on cart")
     return redirect(reverse('product'))
 
 @login_required()
-def delete_from_cart(request,item_id):
+def delete_from_cart(request, item_id):
     item_to_delete=OrderItem.objects.filter(pk=item_id)
     if item_to_delete.exists():
         item_to_delete[0].delete()

@@ -4,7 +4,6 @@
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-20">
             <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>
-
         </div>
         <div class="lg:w-2/3 w-full mx-auto overflow-auto">
             <table class="table-auto w-full text-left whitespace-no-wrap">
@@ -17,24 +16,20 @@
                     </tr>
                 </thead>
                 <tbody>
-
-
-                      <tr>
-            {% for item in order.get_cart_items %}
-            <td class="px-4 py-3">{{ forloop.counter }}</td>
-            <td class="px-4 py-3">{{ item.product.name }}</td>
-            <td class="px-4 py-3">{{ item.product.price }}</td>
-            <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-teal-500 border-0 py-2 px-4 focus:outline-none hover:bg-teal-600 rounded"><a href="{% url 'order:delete_from_cart' item.id %}" >Delete from Cart</a></button>
-            {% endfor %}
-            </tr></tbody>
-
-      </table>
+                    <tr>
+                        {% for item in order.get_cart_items %}
+                        <td class="px-4 py-3">{{ forloop.counter }}</td>
+                        <td class="px-4 py-3">{{ item.product.name }}</td>
+                        <td class="px-4 py-3">{{ item.product.price }}</td>
+                        <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-teal-500 border-0 py-2 px-4 focus:outline-none hover:bg-teal-600 rounded"><a href="{% url 'order:delete_from_cart' item.id %}">Delete from Cart</a></button>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
+            <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy Now</button>
+        </div>
     </div>
-    <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
-      <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Buy Now</button>
-    </div>
-  </div>
 </section>
-
-
 {% endblock %}
